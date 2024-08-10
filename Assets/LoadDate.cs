@@ -6,6 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class LoadDate : MonoBehaviour
 {
+    [System.Serializable]
+    private class UserData
+    {
+        public int hp;
+        public int attack;
+        public int defense;
+    }
+    private void Start()
+    {
+    //データの読み出し
+        //var player = JsonUtility.FromJson(jsonstr);
+        //var  player = JsonUtility.FromJson<UserData>(jsonstr);
+        //Debug.Log(player.hp +" "+ player.attack + " " + player.defense);
+        string Jsontest1 = PlayerPrefs.GetString("Jsontest");
+        Debug.Log(Jsontest1);
+    }
+
     public Text text;
 
     public void ClickStartButton()
