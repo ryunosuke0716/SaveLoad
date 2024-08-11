@@ -25,6 +25,7 @@ public class SaveData : MonoBehaviour
     PlayerPrefs.Save();
 
     Debug.Log(jsonstr);
+    //Debug.Log(jsonstr.hp);
 
     //データの読み出し
     //var  player2 = JsonUtility.FromJson<UserData>(jsonstr);

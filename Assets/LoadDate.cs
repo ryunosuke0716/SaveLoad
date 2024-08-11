@@ -16,11 +16,11 @@ public class LoadDate : MonoBehaviour
     private void Start()
     {
     //データの読み出し
+        var jsonstr = PlayerPrefs.GetString("Jsontest");
+        Debug.Log(jsonstr);
         //var player = JsonUtility.FromJson(jsonstr);
-        //var  player = JsonUtility.FromJson<UserData>(jsonstr);
-        //Debug.Log(player.hp +" "+ player.attack + " " + player.defense);
-        string Jsontest1 = PlayerPrefs.GetString("Jsontest");
-        Debug.Log(Jsontest1);
+        var  player = JsonUtility.FromJson<UserData>(jsonstr);
+        Debug.Log(player.hp +" "+ player.attack + " " + player.defense);
     }
 
     public Text text;
