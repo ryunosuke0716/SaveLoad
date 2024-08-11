@@ -17,9 +17,16 @@ public class LoadByClick : MonoBehaviour
 
     public void ClickStartButton()
     {
-        var player = PlayerPrefs.GetString(iptname.text);
-        Debug.Log(player);
-        var jsonstr = JsonUtility.FromJson<Player>(player);
-        Debug.Log(jsonstr.name +" "+ jsonstr.rank +" "+ jsonstr.time);
+        if(iptname.text != null)
+        {
+            var player = PlayerPrefs.GetString(iptname.text);
+            Debug.Log(player);
+            var jsonstr = JsonUtility.FromJson<Player>(player);
+            Debug.Log(jsonstr.name +" "+ jsonstr.rank +" "+ jsonstr.time);
+        }
+        else
+        {
+            Debug.Log("データ無し");
+        }
     }
 }
