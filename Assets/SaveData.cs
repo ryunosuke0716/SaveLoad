@@ -26,9 +26,6 @@ public class SaveData : MonoBehaviour
 
     Debug.Log(jsonstr);
     //Debug.Log(jsonstr.hp);
-
-    //データの読み出し
-    //var  player2 = JsonUtility.FromJson<UserData>(jsonstr);
     }
 
     public InputField ipfd;
