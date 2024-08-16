@@ -36,6 +36,11 @@ public class RankingListMulti : MonoBehaviour
         // listをソート
         var c = new Comparison<Info>(Compare);
         list.Sort(c);
+
+        for(int i = 0; i < 3; i++)
+        {
+            Debug.Log(list[i].name);
+        }        
       
         foreach (Info i in list) 
         {
