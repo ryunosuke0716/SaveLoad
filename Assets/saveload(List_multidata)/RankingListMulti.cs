@@ -12,6 +12,12 @@ public class RankingListMulti : MonoBehaviour
     public Text text1;
     public Text text2;
 
+    public Text name1;
+    public Text score1;
+
+    //string score2 = score1.text;
+    //int score3 = int.Parse(score2);
+
     class Info 
     {
         public string name;
@@ -27,16 +33,14 @@ public class RankingListMulti : MonoBehaviour
     public void ClickButton()
     {
         Info[] src = new Info[]{new Info("Taro", 40), 
-                      new Info("Jiro", 30),
-                      new Info("Saburo", 20),new Info("Sakaguchi", 100)};
+                      new Info("Jiro", 30),new Info("Saburo", 20),
+                      new Info("Sakaguchi", 100),new Info(name1.text,int.Parse(score1.text))};
         
-        //src.Add(Info[]("saka",49));
-
         var list = new List<Info>();
       
         // listに要素を追加
         list.AddRange(src);
-      
+
         // listをソート
         var c = new Comparison<Info>(Compare);
         list.Sort(c);　//(昇順)
