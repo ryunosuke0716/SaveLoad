@@ -840,7 +840,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672704075}
-        m_TargetAssemblyTypeName: RankingListMulti, Assembly-CSharp
+        m_TargetAssemblyTypeName: SaveListOnJson, Assembly-CSharp
         m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
@@ -898,15 +898,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 672704070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40bc50388f940ef4aa17f628dd4a3696, type: 3}
+  m_Script: {fileID: 11500000, guid: a6f0f9b7baf07aa4086350f0dcd6ffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ranktext: {fileID: 0}
-  text0: {fileID: 639876301}
-  text1: {fileID: 555587329}
-  text2: {fileID: 1142040126}
-  name1: {fileID: 1096769026}
-  score1: {fileID: 1950643028}
+  name: {fileID: 1096769026}
+  score: {fileID: 1950643028}
 --- !u!1 &674899598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1146,7 @@ GameObject:
   - component: {fileID: 1096769027}
   - component: {fileID: 1096769026}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (name)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1590,7 +1586,7 @@ GameObject:
   - component: {fileID: 1950643029}
   - component: {fileID: 1950643028}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (score)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

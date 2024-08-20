@@ -5,18 +5,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class RankingListMulti : MonoBehaviour
+public class LoadListOnJson : MonoBehaviour
 {
     public Text ranktext;
     public Text text0;
     public Text text1;
     public Text text2;
 
-    public Text name1;
-    public Text score1;
-
-    //string score2 = score1.text;
-    //int score3 = int.Parse(score2);
+    [System.Serializable]
+    private class Player
+    {
+        public string jsonname;
+        public string jsonscore;
+    }
 
     class Info 
     {
@@ -29,17 +30,22 @@ public class RankingListMulti : MonoBehaviour
             this.score = score;
         }
     }
+
+    static int Compare(Info a, Info b) 
+    {
+        return a.score - b.score;
+    }
    
     public void ClickButton()
     {
-        Info[] src = new Info[]{new Info("Taro", 40), 
-                      new Info("Jiro", 30),new Info("Saburo", 20),
-                      new Info("Sakaguchi", 100),new Info(name1.text,int.Parse(score1.text))};
-        
+        var player = PlayerPrefs.GetString("List");
+        var jsonstr = JsonUtility.FromJson<Player>(player);
+
+        Debug.Log(jsonstr);
+
         var list = new List<Info>();
-      
-        // listに要素を追加
-        list.AddRange(src);
+        list.Add(jsonstr);
+        
 
         // listをソート
         var c = new Comparison<Info>(Compare);
@@ -64,12 +70,6 @@ public class RankingListMulti : MonoBehaviour
         foreach (Info i in list) 
         {
             Debug.Log(i.name +" "+ i.score);
-            //ranktext.text = i.name;
         }
-    }
-    
-    static int Compare(Info a, Info b) 
-    {
-        return a.score - b.score;
     }
 }
