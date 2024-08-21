@@ -10,6 +10,7 @@ public class SaveList : MonoBehaviour
     public Text names;
     public Text score;
 
+    public Text ranktext;
     public Text text0;
     public Text text1;
     public Text text2;
@@ -61,6 +62,13 @@ public class SaveList : MonoBehaviour
         list.Sort(c);　//(昇順)
         list.Reverse();　//(降順に変換)
 
+        string[] ranknames = {"1st", "2nd","3rd","4th","5th","6th","7th","8th","9th","10th"};
+
+        ranktext.text = "";
+        foreach (Info i in list) {
+            ranktext.text += /*ranknames[i] +*/ ": " + i.name +" " + i.score +"\r\n"; 
+        }
+
         for(int i = 0; i < 3; i++)
         {
             //Debug.Log(list[i].name);
@@ -74,6 +82,6 @@ public class SaveList : MonoBehaviour
             else if(i==2){
                 text2.text = "3rd: " + list[i].name + " score " + list[i].score;
             }
-        }      
+        }
     }  
 }
