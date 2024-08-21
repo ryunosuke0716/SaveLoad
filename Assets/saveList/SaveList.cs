@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class LoadListOnJson : MonoBehaviour
+public class SaveList : MonoBehaviour
 {
-    public Text ranktext;
+    public Text names;
+    public Text score;
+
     public Text text0;
     public Text text1;
     public Text text2;
@@ -38,16 +40,22 @@ public class LoadListOnJson : MonoBehaviour
    
     public void ClickButton()
     {
-        var player = PlayerPrefs.GetString("List");
-        Debug.Log(player);
-        var jsonstr = JsonUtility.FromJson<Player>(player);
-
-        Debug.Log(jsonstr);
+        Player player = new Player();
+        //データの設定
+        player.jsonname = names.text;
+        player.jsonscore = score.text;
+        
+        Info[] src0 = new Info[]{new Info("sakaguchi",1),new Info("sakasaka",10),new Info("sasasa",100),};
+        Info[] src = new Info[]{new Info(names.text,int.Parse(score.text))};
+        Debug.Log(names.text +" "+ int.Parse(score.text));
 
         var list = new List<Info>();
-        //list.AddRange(jsonstr);
+      
+        // listに要素を追加
+        list.AddRange(src0);
+        list.AddRange(src);
+        Debug.Log(src);
         
-
         // listをソート
         var c = new Comparison<Info>(Compare);
         list.Sort(c);　//(昇順)
@@ -66,11 +74,6 @@ public class LoadListOnJson : MonoBehaviour
             else if(i==2){
                 text2.text = "3rd: " + list[i].name + " score " + list[i].score;
             }
-        }        
-      
-        foreach (Info i in list) 
-        {
-            Debug.Log(i.name +" "+ i.score);
-        }
-    }
+        }      
+    }  
 }

@@ -840,7 +840,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672704075}
-        m_TargetAssemblyTypeName: SaveListOnJson, Assembly-CSharp
+        m_TargetAssemblyTypeName: SaveList, Assembly-CSharp
         m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
@@ -898,11 +898,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 672704070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f0f9b7baf07aa4086350f0dcd6ffb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b7c0500632ab6c418470e6aed28e2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   names: {fileID: 1096769026}
   score: {fileID: 1950643028}
+  text0: {fileID: 639876301}
+  text1: {fileID: 555587329}
+  text2: {fileID: 1142040126}
 --- !u!1 &674899598
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,8 +917,6 @@ GameObject:
   - component: {fileID: 674899599}
   - component: {fileID: 674899602}
   - component: {fileID: 674899601}
-  - component: {fileID: 674899600}
-  - component: {fileID: 674899603}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -943,62 +944,6 @@ RectTransform:
   m_AnchoredPosition: {x: 102.548065, y: 118.399994}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &674899600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674899598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 674899601}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 674899603}
-        m_TargetAssemblyTypeName: RankingListMulti, Assembly-CSharp
-        m_MethodName: ClickButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &674899601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,22 +982,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674899598}
   m_CullTransparentMesh: 1
---- !u!114 &674899603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674899598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40bc50388f940ef4aa17f628dd4a3696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ranktext: {fileID: 608967555}
-  text0: {fileID: 639876301}
-  text1: {fileID: 555587329}
-  text2: {fileID: 1142040126}
 --- !u!1 &740973291
 GameObject:
   m_ObjectHideFlags: 0

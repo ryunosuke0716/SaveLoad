@@ -17,7 +17,7 @@ public class LoadByClick : MonoBehaviour
 
     public void ClickStartButton()
     {
-        if(iptname.text != null)
+        if(iptname.text != "")
         {
             var player = PlayerPrefs.GetString(iptname.text);
             Debug.Log(player);

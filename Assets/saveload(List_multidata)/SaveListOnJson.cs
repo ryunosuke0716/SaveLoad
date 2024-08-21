@@ -7,7 +7,7 @@ using System.Linq;
 
 public class SaveListOnJson : MonoBehaviour
 {
-    public Text name;
+    public Text names;
     public Text score;
 
     [System.Serializable]
@@ -33,16 +33,19 @@ public class SaveListOnJson : MonoBehaviour
     {
         Player player = new Player();
         //データの設定
-        player.jsonname = name.text;
+        player.jsonname = names.text;
         player.jsonscore = score.text;
         
-        Info[] src = new Info[]{new Info(name.text,int.Parse(score.text))};
+        Info[] src = new Info[]{new Info(names.text,int.Parse(score.text))};
+        Debug.Log(names.text +" "+ int.Parse(score.text));
 
         var list = new List<Info>();
       
         // listに要素を追加
         list.AddRange(src);
+        Debug.Log(src);
         string jsonstr = JsonUtility.ToJson(list);
+        Debug.Log(jsonstr);
         PlayerPrefs.SetString("List", jsonstr);
         PlayerPrefs.Save();
     }        
