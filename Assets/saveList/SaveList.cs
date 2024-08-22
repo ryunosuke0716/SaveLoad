@@ -15,13 +15,6 @@ public class SaveList : MonoBehaviour
     public Text text1;
     public Text text2;
 
-    [System.Serializable]
-    private class Player
-    {
-        public string jsonname;
-        public string jsonscore;
-    }
-
     class Info 
     {
         public string name;
@@ -40,22 +33,18 @@ public class SaveList : MonoBehaviour
     }
    
     public void ClickButton()
-    {
-        Player player = new Player();
-        //データの設定
-        player.jsonname = names.text;
-        player.jsonscore = score.text;
-        
+    {   
         Info[] src0 = new Info[]{new Info("sakaguchi",1),new Info("sakasaka",10),new Info("sasasa",100),};
         Info[] src = new Info[]{new Info(names.text,int.Parse(score.text))};
         Debug.Log(names.text +" "+ int.Parse(score.text));
+        Debug.Log(src0);
+        Debug.Log(src);
 
         var list = new List<Info>();
       
         // listに要素を追加
         list.AddRange(src0);
         list.AddRange(src);
-        Debug.Log(src);
         
         // listをソート
         var c = new Comparison<Info>(Compare);

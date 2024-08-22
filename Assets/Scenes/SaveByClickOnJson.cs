@@ -20,6 +20,7 @@ public class SaveByClick : MonoBehaviour
     public void ClickStartButton()
     {
         Player player = new Player();
+        Debug.Log(player);
         //データの設定
         player.name = iptname.text;
         player.rank = iptrank.text;
