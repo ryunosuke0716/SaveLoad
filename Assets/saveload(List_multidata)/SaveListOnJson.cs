@@ -17,6 +17,12 @@ public class SaveListOnJson : MonoBehaviour
         public string jsonscore;
     }
 
+     [System.Serializable]
+    private class Wrapper
+    {
+        public List<Player> list;
+    }
+        
     class Info 
     {
         public string name1;
@@ -35,15 +41,16 @@ public class SaveListOnJson : MonoBehaviour
         //データの設定
         player.jsonname = names.text;
         player.jsonscore = score.text;
-        
+/*        
         Info[] src = new Info[]{new Info(names.text,int.Parse(score.text))};
         Debug.Log(names.text +" "+ int.Parse(score.text));
-
-        var list = new List<Info>();
-      
+ */
+        var list = new List<Player>();
+        var wrap = new Wrapper();
+        wrap.list = list;
         // listに要素を追加
-        list.AddRange(src);
-        Debug.Log(src);
+        list.Add(player);
+        Debug.Log(list);
         string jsonstr = JsonUtility.ToJson(list);
         Debug.Log(jsonstr);
         PlayerPrefs.SetString("List", jsonstr);

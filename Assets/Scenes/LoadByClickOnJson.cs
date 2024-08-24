@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class LoadByClick : MonoBehaviour
 {
+    public Text ranktext;
+
     [System.Serializable]
     private class Player
     {
@@ -22,7 +24,9 @@ public class LoadByClick : MonoBehaviour
             var player = PlayerPrefs.GetString(iptname.text);
             Debug.Log(player);
             var jsonstr = JsonUtility.FromJson<Player>(player);
-            Debug.Log(jsonstr.name +" "+ jsonstr.rank +" "+ jsonstr.time);
+            Debug.Log("name: " + jsonstr.name +"rank: "+ jsonstr.rank +"time: "+ jsonstr.time);
+
+            ranktext.text = "name: " + jsonstr.name +" rank: "+ jsonstr.rank +" time: "+ jsonstr.time;
         }
         else
         {

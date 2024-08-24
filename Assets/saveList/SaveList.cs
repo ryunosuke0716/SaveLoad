@@ -54,8 +54,11 @@ public class SaveList : MonoBehaviour
         string[] ranknames = {"1st", "2nd","3rd","4th","5th","6th","7th","8th","9th","10th"};
 
         ranktext.text = "";
-        foreach (Info i in list) {
-            ranktext.text += /*ranknames[i] +*/ ": " + i.name +" " + i.score +"\r\n"; 
+
+        int rank = 0;
+        foreach (Info info in list) {
+            ranktext.text += ranknames[rank] + ": " + info.name +" " + info.score +"\r\n";
+            rank = rank + 1;
         }
 
         for(int i = 0; i < 3; i++)
